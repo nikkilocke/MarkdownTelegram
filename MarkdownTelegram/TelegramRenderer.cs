@@ -66,6 +66,25 @@ namespace MarkdownTelegram {
             return entity;
         }
 
+        Stack<int> underlines = new Stack<int>();
+
+        public bool ProcessHtmlTag(string tag) {
+            switch(tag.ToLower()) {
+                case "<u>":
+                    underlines.Push(builder.Length);
+                    return true;
+                case "</u>":
+                    if(underlines.Count > 0) {
+                        MessageEntity entity = AddEntity(MessageEntityType.Underline);
+                        entity.Offset = underlines.Pop();
+                        entity.Length = builder.Length - entity.Offset;
+                        return true;
+                    }
+                    break;
+            }
+            return false;
+		}
+
         /// <summary>
         /// Writes the lines of a <see cref="LeafBlock"/>
         /// </summary>

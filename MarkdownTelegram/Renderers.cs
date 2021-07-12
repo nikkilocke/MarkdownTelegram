@@ -287,7 +287,8 @@ namespace MarkdownTelegram {
     }
     public class TelegramHtmlInlineRenderer : TelegramObjectRenderer<HtmlInline> {
         protected override void Write(TelegramRenderer renderer, HtmlInline obj) {
-            renderer.Write(obj.Tag);
+            if(!renderer.ProcessHtmlTag(obj.Tag))
+                renderer.Write(obj.Tag);
         }
     }
     public class TelegramHtmlEntityInlineRenderer : TelegramObjectRenderer<HtmlEntityInline> {

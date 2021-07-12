@@ -40,9 +40,7 @@ namespace MarkdownTelegram {
         /// <param name="context">A parser context used for the parsing.</param>
         /// <returns>The result of the conversion</returns>
         /// <exception cref="ArgumentNullException">if markdown variable is null</exception>
-#nullable enable
-        public static string ToTelegram(string markdown, List<MessageEntity> entities, MarkdownPipeline? pipeline = null, MarkdownParserContext? context = null) {
-#nullable disable
+        public static string ToTelegram(string markdown, List<MessageEntity> entities) {
             var document = Parse(markdown);
             return ToTelegram(document, entities);
         }
@@ -55,9 +53,7 @@ namespace MarkdownTelegram {
         /// <param name="pipeline">The pipeline used for the conversion.</param>
         /// <returns>The result of the conversion</returns>
         /// <exception cref="ArgumentNullException">if markdown document variable is null</exception>
-#nullable enable
         public static string ToTelegram(this MarkdownDocument document, List<MessageEntity> entities) {
-#nullable disable
             if (document is null) throw new ArgumentNullException(nameof(document));
             StringBuilder result = new StringBuilder();
             TelegramRenderer renderer = new TelegramRenderer(result, entities);
@@ -65,9 +61,7 @@ namespace MarkdownTelegram {
             return result.ToString();
         }
 
-#nullable enable
         public static string ToMarkdown(this MarkdownDocument document) {
-#nullable disable
             if (document is null) throw new ArgumentNullException(nameof(document));
             StringBuilder result = new StringBuilder();
             RoundtripRenderer renderer = new RoundtripRenderer(new StringWriter(result));

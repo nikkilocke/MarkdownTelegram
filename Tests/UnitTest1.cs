@@ -25,13 +25,14 @@ namespace Tests {
 
 		void RenderTelegram(string text) {
 			MarkdownDocument doc = TelegramMarkdown.Parse(text);
-			output.WriteLine("=====roundtrip=====");
-			string result = TelegramMarkdown.ToMarkdown(doc);
-			output.WriteLine(result);
 			output.WriteLine("=====telegram=====");
 			List<MessageEntity> entities = new List<MessageEntity>();
-			result = TelegramMarkdown.ToTelegram(doc, entities);
-			RenderTelegram(result, entities);
+			string result = TelegramMarkdown.ToTelegram(doc, entities);
+			output.WriteLine(result);
+			output.WriteLine($"Type:Offset:Length:Text:Url");
+			foreach (MessageEntity e in entities) {
+				output.WriteLine($"{e.Type}:{e.Offset}:{e.Length}:{result.Substring(e.Offset, e.Length)}:{e.Url}");
+			}
 			output.WriteLine("=====html=====");
 			result = Markdown.ToHtml(doc);
 			output.WriteLine(result);
@@ -40,12 +41,5 @@ namespace Tests {
 			output.WriteLine(result);
 		}
 
-		void RenderTelegram(string result, List<MessageEntity> entities) {
-			output.WriteLine(result);
-			output.WriteLine($"Type:Offset:Length:Text:Url");
-			foreach (MessageEntity e in entities) {
-				output.WriteLine($"{e.Type}:{e.Offset}:{e.Length}:{result.Substring(e.Offset, e.Length)}:{e.Url}");
-			}
-		}
 	}
 }
