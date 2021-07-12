@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarkdownTelegram", "Markdow
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{FC596814-9590-451B-80C4-B8678315C45F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Markdig", "E:\Git\markdig\src\Markdig\Markdig.csproj", "{DBA0506A-FF08-4B83-B386-C725CCE63307}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{FC596814-9590-451B-80C4-B8678315C45F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC596814-9590-451B-80C4-B8678315C45F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC596814-9590-451B-80C4-B8678315C45F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DBA0506A-FF08-4B83-B386-C725CCE63307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DBA0506A-FF08-4B83-B386-C725CCE63307}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DBA0506A-FF08-4B83-B386-C725CCE63307}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DBA0506A-FF08-4B83-B386-C725CCE63307}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

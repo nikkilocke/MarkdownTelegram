@@ -79,7 +79,7 @@ namespace MarkdownTelegram {
         public static MarkdownDocument Parse(string markdown) {
             if (markdown is null) throw new ArgumentNullException("markdown");
 
-            MarkdownPipeline? pipeline = DefaultPipeline;
+			MarkdownPipeline pipeline = DefaultPipeline;
 
             return Markdown.Parse(markdown, pipeline);
         }

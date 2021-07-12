@@ -2,14 +2,28 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>A simple layer over Markdig to convert Markdown text to the format required to post to Telegram</Description>
+    <Copyright>(c) 2021 Trumphurst Ltd</Copyright>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/nikkilocke/MarkdownTelegram</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/nikkilocke/MarkdownTelegram</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Markdig" Version="0.25.0" />
     <PackageReference Include="Telegram.Bot" Version="16.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="E:\Git\markdig\src\Markdig\Markdig.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
