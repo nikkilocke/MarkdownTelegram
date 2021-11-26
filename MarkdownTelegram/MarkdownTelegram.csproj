@@ -8,6 +8,8 @@
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageProjectUrl>https://github.com/nikkilocke/MarkdownTelegram</PackageProjectUrl>
     <RepositoryUrl>https://github.com/nikkilocke/MarkdownTelegram</RepositoryUrl>
+    <Version>1.0.1</Version>
+    <PackageReleaseNotes>Fixed bug where it output a Url entity instead of a TextLink one.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

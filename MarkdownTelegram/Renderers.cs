@@ -299,7 +299,7 @@ namespace MarkdownTelegram {
     public class LinkInlineRenderer : TelegramObjectRenderer<LinkInline> {
 
         protected override void Write(TelegramRenderer renderer, LinkInline obj) {
-            MessageEntity entity = renderer.AddEntity(MessageEntityType.Url);
+            MessageEntity entity = renderer.AddEntity(MessageEntityType.TextLink);
             entity.Url = obj.Url;
             renderer.WriteChildren(obj);
             renderer.EndEntity(entity);
